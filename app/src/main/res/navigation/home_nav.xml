@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav"
+    app:startDestination="@id/item_home">
+    <fragment
+        android:id="@+id/item_home"
+        android:name="com.taibasharif.crafty.Views.Fragments.homeFragment"
+        android:label="homeFragment"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/item_wishlist"
+        android:name="com.taibasharif.crafty.Views.Fragments.wishFragment"
+        android:label="wishFragment"
+        tools:layout="@layout/fragment_wish"/>
+    <fragment
+        android:id="@+id/item_order"
+        android:name="com.taibasharif.crafty.Views.Fragments.OrderFragment"
+        android:label="orderFragment"
+        tools:layout="@layout/fragment_order"/>
+    <fragment
+        android:id="@+id/item_profile"
+        android:name="com.taibasharif.crafty.Views.Fragments.profileFragment"
+        android:label="profileFragment"
+        tools:layout="@layout/fragment_profile"/>
+</navigation>

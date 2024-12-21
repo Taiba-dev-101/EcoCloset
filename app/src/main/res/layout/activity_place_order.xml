@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:scrollbars="none"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+         android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Place Your Order"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/productImage"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:contentDescription="Product Image"
+            android:src="@drawable/logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/head"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/namepo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Handcrafted Vase"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/productImage" />
+
+        <TextView
+            android:id="@+id/pricepo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$49.99"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/namepo" />
+
+        <TextView
+            android:id="@+id/sizepo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medium "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pricepo"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/postalAddressLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Postal Address:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sizepo"
+            android:layout_marginTop="16dp" />
+        <!-- Postal Address Input -->
+        <EditText
+            android:id="@+id/postalAddress"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:inputType="textMultiLine"
+            android:gravity="top"
+            android:hint="Enter your postal address"
+            android:padding="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/postalAddressLabel"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/userContactLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Number:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/postalAddress"
+            android:layout_marginTop="16dp" />
+        <!-- User Contact Input -->
+        <EditText
+            android:id="@+id/userContact"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter your contact number"
+            android:inputType="phone"
+            android:padding="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userContactLabel"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/placeOrderButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Place Order"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userContact"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
