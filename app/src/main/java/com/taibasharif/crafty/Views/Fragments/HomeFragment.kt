@@ -2,6 +2,7 @@ package com.taibasharif.crafty.Views.Fragments
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseUser
+import com.taibasharif.crafty.ChatActivity
 import com.taibasharif.crafty.Models.Repositories.AuthRepo
 import com.taibasharif.crafty.Models.Repositories.Clothe
 import com.taibasharif.crafty.RecyclerView_ki_cheezain.ClotheAdapter
@@ -35,6 +37,7 @@ class homeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Log.d("HomeFragment", "HomeFragment created")
 
         adapter= ClotheAdapter(items)
         binding.rv1.adapter= adapter
@@ -69,8 +72,20 @@ class homeFragment : Fragment() {
         binding.floatingActionButton.setOnClickListener {
             startActivity(Intent(context, AddClotheActivity::class.java))
         }
+
+        binding.button.setOnClickListener {
+            // Check if the context is available
+            Toast.makeText(requireContext(), "Start Chat button clicked", Toast.LENGTH_SHORT).show()
+
+            activity?.let {
+                val intent = Intent(requireContext(), ChatActivity::class.java)
+                startActivity(intent)
+            }
+        }
     }
-}
+    }
+
+
 
 
 

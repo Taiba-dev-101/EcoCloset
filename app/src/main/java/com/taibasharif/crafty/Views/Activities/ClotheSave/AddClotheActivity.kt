@@ -16,7 +16,7 @@ class AddClotheActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAddClotheBinding.inflate(layoutInflater)
         setContentView(binding.root)
-       // viewModel = AddCVM()
+       viewModel = AddCVM()
         lifecycleScope.launch {
             viewModel.isSuccessfullySaved.collect {
                 it?.let {

@@ -15,6 +15,8 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
+import com.taibasharif.crafty.ChatActivity
+import com.taibasharif.crafty.ChatListActivity
 import com.taibasharif.crafty.R
 import com.taibasharif.crafty.ViewModels.MainVM
 import kotlinx.coroutines.launch
@@ -44,6 +46,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener(this)
         val imageView = findViewById<ImageView>(R.id.drawer_icon)
+        val showchats= findViewById<ImageView>(R.id.showchats)
+        showchats.setOnClickListener {
+            // Start the ChatListActivity when the admin clicks the show chats icon
+            val intent = Intent(this,  ChatListActivity::class.java)
+            startActivity(intent)
+        }
+
         imageView.setOnClickListener { view: View? ->
             if (drawer.isDrawerVisible(GravityCompat.START)) {
                 drawer.closeDrawer(GravityCompat.START)
