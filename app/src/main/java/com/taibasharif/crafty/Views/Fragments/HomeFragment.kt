@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseUser
-import com.taibasharif.crafty.ChatActivity
+import com.taibasharif.crafty.Views.Activities.ChatActivity
 import com.taibasharif.crafty.Models.Repositories.AuthRepo
 import com.taibasharif.crafty.Models.Repositories.Clothe
 import com.taibasharif.crafty.RecyclerView_ki_cheezain.ClotheAdapter

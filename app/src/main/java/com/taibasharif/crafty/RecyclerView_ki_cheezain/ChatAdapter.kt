@@ -1,10 +1,11 @@
-package com.taibasharif.crafty
+package com.taibasharif.crafty.RecyclerView_ki_cheezain
 
 import android.graphics.Color
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.taibasharif.crafty.Models.Repositories.Chat
 import com.taibasharif.crafty.databinding.ChatItemBinding
 
 class ChatAdapter(private val chats: List<Chat>) : RecyclerView.Adapter<ChatAdapter.ChatViewHolder>() {
@@ -26,10 +27,10 @@ class ChatAdapter(private val chats: List<Chat>) : RecyclerView.Adapter<ChatAdap
         // Align the message based on the sender
         if (message.sender == "user") {
             holder.binding.textViewMessage.setTextColor(Color.BLACK) // User message color
-            holder.binding.textViewMessage.gravity = Gravity.START // Align left for user
+            holder.binding.line.gravity =Gravity.LEFT // Align left for user
         } else {
             holder.binding.textViewMessage.setTextColor(Color.BLUE) // Admin message color
-            holder.binding.textViewMessage.gravity = Gravity.END // Align right for admin
+            holder.binding.line.gravity = Gravity.RIGHT // Align right for admin
         }
     }
 

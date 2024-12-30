@@ -1,14 +1,15 @@
-package com.taibasharif.crafty
+package com.taibasharif.crafty.Views.Activities
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import com.taibasharif.crafty.Chat
-import com.taibasharif.crafty.ChatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.taibasharif.crafty.Models.Repositories.Chat
+import com.taibasharif.crafty.RecyclerView_ki_cheezain.ChatAdapter
 import com.taibasharif.crafty.databinding.ActivityAdminChatBinding
+import java.text.SimpleDateFormat
 
 class AdminChatActivity : AppCompatActivity() {
 
@@ -44,7 +45,7 @@ class AdminChatActivity : AppCompatActivity() {
         binding.buttonSendReply.setOnClickListener {
             val replyText = binding.editTextReply.text.toString().trim()
             if (replyText.isNotEmpty()) {
-                val message = Chat("admin", replyText, System.currentTimeMillis())
+                val message = Chat("admin", replyText, SimpleDateFormat("yyyy-MM-dd HH:mm a").format(System.currentTimeMillis()))
 
                 // Add reply message to Firestore
                 val chatRef = db.collection("chats").document(chatId).collection("messages")

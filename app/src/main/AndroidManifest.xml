@@ -14,16 +14,16 @@
         android:theme="@style/Theme.Crafty"
         tools:targetApi="31">
         <activity
-            android:name=".ChatListActivity"
+            android:name=".Views.Activities.ChatListActivity"
             android:exported="false" />
         <activity
-            android:name=".AdminChatActivity"
+            android:name=".Views.Activities.AdminChatActivity"
             android:exported="false" />
         <activity
-            android:name=".ChatActivity"
+            android:name=".Views.Activities.ChatActivity"
             android:exported="false" />
         <activity
-            android:name=".Views.Activities.OrderskiCheezain.OrderkiDetsActivity"
+            android:name=".RecyclerView_ki_cheezain.OrderkiDetsActivity"
             android:exported="false" />
         <activity
             android:name=".Views.Activities.ClotheSave.ClotheDetailActivity"
@@ -53,5 +53,7 @@
             </intent-filter>
         </activity>
     </application>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>

@@ -4,11 +4,12 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import com.taibasharif.crafty.Models.Repositories.Clothe
 import com.taibasharif.crafty.Models.Repositories.Orders
+import com.taibasharif.crafty.R
 import com.taibasharif.crafty.Views.Activities.ClotheSave.ClotheDetailActivity
-import com.taibasharif.crafty.Views.Activities.OrderskiCheezain.OrderkiDetsActivity
 import com.taibasharif.crafty.databinding.ClotheItemBinding
 import com.taibasharif.crafty.databinding.OrderItemBinding
 
@@ -36,7 +37,14 @@ class ClotheAdapter( val items: List<Any>) : RecyclerView.Adapter<RecyclerView.V
             if (holder is ClotheViewHolder) {
                 val clothe = items.get(position) as Clothe
                 holder.binding.titleC.text= clothe.title
-                holder.binding.pricec.text = "RS: " + clothe.price
+                holder.binding.pricec.text = clothe.price.toString()
+
+                Glide.with(holder.itemView.context)
+                    .load(clothe.image)
+                    .override(500, 500)
+                    .error(R.drawable.pic)
+                    .placeholder(R.drawable.logo)
+                    .into(holder.binding.imageView2)
                 holder.itemView.setOnClickListener {
                     holder.itemView.context.startActivity(
                         Intent(
@@ -51,6 +59,12 @@ class ClotheAdapter( val items: List<Any>) : RecyclerView.Adapter<RecyclerView.V
                 holder.binding.productTitle.text = order.item?.title
                 holder.binding.productPrice.text = order.item?.price.toString()
                 holder.binding.status.text =order.status
+                Glide.with(holder.itemView.context)
+                    .load(order.item?.image)
+                    .override(500, 500)
+                    .error(R.drawable.pic)
+                    .placeholder(R.drawable.logo)
+                    .into(holder.binding.productImage)
                 holder.itemView.setOnClickListener {
              holder.itemView.context.startActivity(
                     Intent(

@@ -15,8 +15,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
-import com.taibasharif.crafty.ChatActivity
-import com.taibasharif.crafty.ChatListActivity
+import com.taibasharif.crafty.CloudinaryHelper.Companion.initializeCloudinary
 import com.taibasharif.crafty.R
 import com.taibasharif.crafty.ViewModels.MainVM
 import kotlinx.coroutines.launch
@@ -26,8 +25,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
+        initializeCloudinary(this)
 
 
         val navHostFragment = supportFragmentManager

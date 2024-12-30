@@ -1,11 +1,12 @@
-package com.taibasharif.crafty
+package com.taibasharif.crafty.RecyclerView_ki_cheezain
 
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.taibasharif.crafty.Models.Repositories.Chat
 import com.taibasharif.crafty.databinding.ChatlistItemBinding
-import com.taibasharif.crafty.ChatListViewHolder
+
 class ChatListAdapter(
     private val chatList: List<Chat>,
     private val onClick: (Chat) -> Unit
@@ -24,8 +25,8 @@ class ChatListAdapter(
         val chat = chatList[position]
 
         // Bind data to views
-        holder.binding.textViewUserId.text = chat.sender // Display sender info (e.g., user ID)
-        holder.binding.textViewLastMessage.text = chat.text // Display the last message
+        holder.binding.textViewUserId.text = chat.naam // Display sender info (e.g., user ID)
+        holder.binding.textViewTimestamp.text = chat.timestamp.toString()
 
         // When the item is clicked, trigger the onClick callback to open the chat
         holder.itemView.setOnClickListener {

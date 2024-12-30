@@ -5,9 +5,11 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import com.taibasharif.crafty.Models.Repositories.Clothe
 import com.taibasharif.crafty.Models.Repositories.Orders
+import com.taibasharif.crafty.R
 import com.taibasharif.crafty.ViewModels.PlaceOVM
 import com.taibasharif.crafty.databinding.ActivityPlaceOrderBinding
 import kotlinx.coroutines.launch
@@ -25,8 +27,13 @@ class PlaceOrderActivity : AppCompatActivity() {
         viewModel= PlaceOVM()
         clothe = Gson().fromJson(intent.getStringExtra("data"), Clothe::class.java)
         binding.namepo.text = clothe.title
-        binding.pricepo.text = "${clothe.price} Rs."
+        binding.pricepo.text = clothe.price.toString()
         binding.sizepo.text=clothe.size
+        Glide.with(this)
+            .load(clothe.image)
+            .error(R.drawable.pic)
+            .placeholder(R.drawable.logo)
+            .into(binding.productImage)
         progressDialog=ProgressDialog(this)
         progressDialog.setMessage("Saving your order...")
         progressDialog.setCancelable(false)
@@ -70,6 +77,7 @@ class PlaceOrderActivity : AppCompatActivity() {
             order.userEmail=user?.email!!
             order.userName=user?.displayName!!
             order.userId=user?.uid!!
+
             viewModel.saveOrder(order)
             Toast.makeText(this, "Order placed successfully!", Toast.LENGTH_SHORT).show()
         }
